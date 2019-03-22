@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/CSS/login.css" />
+    <script src="/static/JS/login.js"></script>
+</head>
+<body>
+    <div class="main">
+        <form class="form" action="/confirm-api/" method="post">
+            <input class="sign" type="text" name="nick" placeholder="请输入昵称">
+            <input class="sign" type="password" name="psd" placeholder="请输入密码">
+            <div align="center" class="sign button" onmouseover="selected()"
+                 onmouseleave="unselected()" onclick="$('.form').submit()">Sign In</div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+.main {
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.form {
+    margin-top:15%;
+    margin-left:35%;
+    width:25%;
+    height:30%;
+}
+
+.sign {
+    float:left;
+    margin-left:5%;
+    margin-top:5%;
+    width:70%;
+    border-style:dotted;
+    border-width:1%;
+    border-color:#000;
+    border-radius:20px 20px 20px 20px;
+}
+
+.button {
+    width:30%;
+    cursor:pointer;
+    border-style:solid;
+    border-color:#eee;
+}
+

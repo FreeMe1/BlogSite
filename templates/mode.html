@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>H*K</title>
+    <link rel="stylesheet" type="text/css" href="/static/CSS/mode.css" />
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="/static/JS/mode.js"></script>
+    <script src="/static/showdown-1.8.6/dist/showdown.min.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="top-shadow"></div>
+        <div class="top">
+            <img src="/static/Icon/icon.png" class="icon">
+            <div class="tip">
+                <div class="nick">
+                    <h4 align="center" class="nickname">{{nick}}</h4>
+                </div>
+            </div>
+            <div class="search">
+                <form class="baidu-form" action="http://www.baidu.com/baidu" target="_blank">
+                    <input class="baidu-search-input" type=text name=word size=50>
+                    <div class="baidu-search-button">
+                        <div class="baidu-search-circle">
+                            <input type="submit" value="" class="baidu-search-submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="u-body">
+            <div class="body-switch">
+                <div class="choose-switch" onmouseover="show('index')">
+                    <img class="switch-img" src="/static/pics/index.png">
+                </div>
+                <div class="choose-switch" onmouseover="show('tags')">
+                    <img class="switch-img" src="/static/pics/tags.png">
+                </div>
+                <div class="choose-switch" onmouseover="show('other')">
+                    <img class="switch-img" src="/static/pics/other.png">
+                </div>
+                <div class="pack-up" onmouseover="pack()">
+                    <img class="switch-img" src="/static/pics/pack.png">
+                </div>
+            </div>
+            <div class="body-line">
+                <div class="line-1 line"></div>
+                <div class="line-2 line"></div>
+                <div class="line-3 line"></div>
+                <div class="line-3-b line"></div>
+                <div class="line-2-b line"></div>
+                <div class="line-1-b line"></div>
+            </div>
+            <div class="body-main index">
+            </div>
+            <div class="body-main tags">
+                <div class="tags-panel">
+                    <div class="add-tag">
+                        <img class="add-img" onclick="add_tag()" src="/static/pics/add.png">
+                    </div>
+                </div>
+                <div class="content-panel"></div>
+                <div class="add-article-panel">
+                    <img src="/static/pics/add_article.png" class="add-article-img"
+                         onmouseleave="this.src='/static/pics/add_article.png'"
+                         onmouseover="this.src='/static/pics/add.png'" onclick="edit_content()">
+                </div>
+            </div>
+            <iframe class="body-main other" src="http://www.imooc.com"></iframe>
+        </div>
+    </div>
+    <div class="add-tag-frame">
+        <input type="text" placeholder="新标签名" class="add-tag-frame-input">
+        <div class="add-tag-frame-button" align="center" onmouseleave="leave('.add-tag-frame-button')"
+             onmouseover="over('.add-tag-frame-button')" onclick="add_tag_confirm()">confirm</div>
+    </div>
+    <div class="delete-tag">
+        <span class="delete-tag-span delete-tag-info"></span>
+        <span class="delete-tag-span delete-tag-confirm" onclick="delete_tag_confirm()"
+              onmouseover="over('.delete-tag-confirm')" onmouseleave="leave('.delete-tag-confirm')">
+            confirm
+        </span>
+        <span class="delete-tag-span delete-tag-cancel" onclick="delete_tag_cancel()"
+              onmouseover="over('.delete-tag-cancel')" onmouseleave="leave('.delete-tag-cancel')">
+            cancel
+        </span>
+    </div>
+    <div class="edit-panel">
+        <div class="menu">
+            <select class="menu-tag-select"></select>
+            <input type="text" placeholder="The title?" class="menu-title-input">
+            <div class="menu-cancel" onclick="edit_panel_none()">
+                <img src="/static/pics/cancel.png" class="menu-cancel-img">
+            </div>
+            <span class="menu-submit" onclick="edit_submit()">submit</span>
+        </div>
+        <textarea placeholder="bode不能为空 :)" class="edit-panel-text" onclick="render()"></textarea>
+        <div class="edit-panel-render"></div>
+    </div>
+    <div class="edit-submit-confirm">
+        <span class="edit-submit-confirm-tip edit-submit-confirm-css"></span>
+        <span class="edit-submit-confirm-yes edit-submit-confirm-css" onclick="edit_submit_yes()">yes</span>
+        <span class="edit-submit-confirm-no edit-submit-confirm-css" onclick="edit_submit_no()">no</span>
+    </div>
+    <div class="index-article">
+        <div class="menu">
+            <div class="menu-cancel" onclick="edit_panel_none()">
+                <img src="/static/pics/cancel.png" class="menu-cancel-img">
+            </div>
+        </div>
+        <div class="append-text"></div>
+    </div>
+</body>
+</html>
